@@ -1,6 +1,5 @@
 package login;
 
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Meniu {
@@ -8,10 +7,8 @@ public class Meniu {
     Scanner scan = new Scanner(System.in);
     private boolean quit = false;
     String userOption= "";
-    DemoLogin demoLogin = new DemoLogin();
 
-    public Meniu() throws SQLException {
-    }
+
 
     public boolean runMenu() {
 

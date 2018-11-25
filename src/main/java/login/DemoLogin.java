@@ -16,8 +16,8 @@ public class DemoLogin implements LoginCapable {
        return sql.addUser(register);
     }
 
-    public boolean login() {
-        return false;
+    public boolean login(User login) {
+        return  sql.loginUser(login);
     }
 
 

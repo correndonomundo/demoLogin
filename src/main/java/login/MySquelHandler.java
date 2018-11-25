@@ -1,9 +1,6 @@
 package login;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class MySquelHandler {
 
@@ -35,7 +32,14 @@ public class MySquelHandler {
         boolean DBOpLogin = false;
         try {
             Statement statement = dbConnection.createStatement();
-            DBOpLogin = statement.execute(sqlCmdLogin);
+            ResultSet resultSet = statement.executeQuery(sqlCmdLogin);
+            if (resultSet.next()){
+                System.out.println("Login successful!");
+                return true;
+            }
+            else{
+                System.out.println("Wrong username/password");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
